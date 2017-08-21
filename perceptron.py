@@ -1,5 +1,11 @@
 #encoding:utf-8
 
+'''
+@author:zhanghonglei
+@email:hongleizhang@bjtu.edu.cn
+@date:2017-06-18
+'''
+
 import matplotlib.pylab as plt
 class Perceptron(object):
 	"""docstring for Perceptron"""

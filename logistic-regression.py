@@ -1,5 +1,11 @@
 #encoding:utf-8
 
+'''
+@author:zhanghonglei
+@email:hongleizhang@bjtu.edu.cn
+@date:2017-07-18
+'''
+
 #Logistic回归梯度上升最优化算法
 import math
 from numpy import *
