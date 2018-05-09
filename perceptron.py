@@ -6,6 +6,9 @@
 @date:2017-06-18
 '''
 
+#encoding:utf-8
+%matplotlib inline
+
 import matplotlib.pylab as plt
 class Perceptron(object):
 	"""docstring for Perceptron"""
@@ -43,9 +46,12 @@ class Perceptron(object):
 			mk=[]
 			cs=[]
 			for i in range(10):
-				print i
+				print(i)
 				s=w1*x1[i]+w2*x2[i]+b
-				if (s>=0 and y[i]<=0) or (s<=0 and y[i]>0):
+                		#wi += lr*(y-\hat(y))*xi
+                		#如果本来是1，预测成了0，那么说明w与x的夹角大于90度，则需将两个向量相加
+                		#如果本来是0，预测成了1，那么说明w与x的夹角小于90度，以至于是个大于0的数给判成了1，则需将两个向量夹角变大，因此向量相减即可
+				if (s>=0 and y[i]<=0) or (s<=0 and y[i]>0):  
 					w1+=y[i]*x1[i]
 					w2+=y[i]*x2[i]
 					b+=y[i]
@@ -62,7 +68,7 @@ class Perceptron(object):
 			s1=(0,-b/w2)
 			s2=(8,(-b-8*w1)/w2)
 			plt.plot([s1[0],s2[0]],[s1[1],s2[1]],'k-',linewidth=2.0,color='g')
-			print 'w1:%s,w2:%s,b:%s'%(w1,w2,b)
+			print('w1:%s,w2:%s,b:%s'%(w1,w2,b))
 			plt.show()
 
 
